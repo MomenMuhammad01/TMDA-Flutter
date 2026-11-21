@@ -1,10 +1,11 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tmda/core/util/assets_manager.dart';
 import 'package:tmda/core/util/color_manager.dart';
 
 class ThemeManager {
-  static ThemeData darkTheme() {
+  static ThemeData darkTheme() => defaultTheme();
+  static ThemeData defaultTheme() {
     return ThemeData(
         useMaterial3: true,
         scaffoldBackgroundColor: Colors.black,
@@ -44,7 +45,7 @@ class ThemeManager {
         ),
         textButtonTheme: TextButtonThemeData(
           style: ButtonStyle(
-            textStyle: MaterialStatePropertyAll(
+            textStyle: WidgetStatePropertyAll(
               TextStyle(
                 fontSize: 12.sp,
                 fontWeight: FontWeight.w600,
@@ -57,11 +58,12 @@ class ThemeManager {
           showSelectedLabels: false,
           showUnselectedLabels: false,
           type: BottomNavigationBarType.fixed,
-          backgroundColor: ColorsManager.bottomNavigationColor.withOpacity(0.5),
+          backgroundColor:
+              ColorsManager.bottomNavigationColor.withValues(alpha: .5),
           selectedItemColor: ColorsManager.primaryColor,
-          unselectedItemColor: Colors.white.withOpacity(0.6),
+          unselectedItemColor: Colors.white.withValues(alpha: .6),
         ),
-        tabBarTheme: const TabBarTheme(
+        tabBarTheme: const TabBarThemeData(
           labelColor: Colors.white,
           unselectedLabelColor: Colors.white,
           dividerColor: Colors.transparent,

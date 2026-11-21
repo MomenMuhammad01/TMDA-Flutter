@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
@@ -16,7 +16,7 @@ import 'package:tmda/features/tv/presentation/components/tv_shows/top_rated_tv_s
 import 'package:tmda/injection_container.dart';
 
 @RoutePage()
-class TvShowScreen extends StatelessWidget with AutoRouteWrapper {
+class TvShowScreen extends StatelessWidget implements AutoRouteWrapper {
   const TvShowScreen({super.key});
 
   @override

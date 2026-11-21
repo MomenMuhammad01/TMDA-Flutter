@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:tmda/core/widgets/fade_in_animation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tmda/core/util/assets_manager.dart';
@@ -64,9 +64,9 @@ class _TvShowDetailsBodyComponentState extends State<TvShowDetailsBodyComponent>
           previous.tvShowDetailsState != current.tvShowDetailsState,
       builder: (context, state) {
 
-        return Animate(
-          effects: [FadeEffect(duration: 250.ms)],
-          child: ListView(
+        return FadeInAnimation(
+        duration: const Duration(milliseconds: 250),
+        child: ListView(
             controller: _scrollController,
             padding: EdgeInsets.zero,
             children: [

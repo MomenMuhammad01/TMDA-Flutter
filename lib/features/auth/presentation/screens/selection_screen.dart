@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tmda/config/router/app_router.dart';
@@ -25,13 +25,13 @@ class SelectionScreen extends StatelessWidget {
               top: 30,
               left: 20,
               child: NeonLightPainter(
-                  color: ColorsManager.primaryColor.withOpacity(0.5)),
+                  color: ColorsManager.primaryColor.withValues(alpha: 0.5)),
             ),
             Positioned(
               bottom: 350,
               right: 0,
               child: NeonLightPainter(
-                  color: ColorsManager.secondaryColor.withOpacity(0.5)),
+                  color: ColorsManager.secondaryColor.withValues(alpha: 0.5)),
             ),
             Align(
               alignment: Alignment.center,

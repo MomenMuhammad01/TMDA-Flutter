@@ -1,15 +1,15 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tmda/core/util/color_manager.dart';
 import 'package:tmda/core/util/strings_manager.dart';
 
 class SectionWidgetWithSeeAll extends StatelessWidget {
   const SectionWidgetWithSeeAll({
-    Key? key,
+    super.key,
     required this.title,
     required this.color,
     required this.textButtonOnPressed,
-  }) : super(key: key);
+  });
   final String title;
   final Color color;
   final void Function() textButtonOnPressed;

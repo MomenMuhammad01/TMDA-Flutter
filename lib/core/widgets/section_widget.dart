@@ -1,12 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SectionWidget extends StatelessWidget {
   const SectionWidget({
-    Key? key,
+    super.key,
     required this.title,
     required this.color,
-  }) : super(key: key);
+  });
   final String title;
   final Color color;
   @override

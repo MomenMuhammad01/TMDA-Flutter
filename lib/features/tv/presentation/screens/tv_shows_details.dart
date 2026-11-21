@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
 import 'package:tmda/core/util/assets_manager.dart';
@@ -13,7 +13,7 @@ import 'package:tmda/features/tv/presentation/components/tv_details/tv_show_body
 import 'package:tmda/injection_container.dart';
 
 @RoutePage()
-class TvDetailsScreen extends StatefulWidget with AutoRouteWrapper{
+class TvDetailsScreen extends StatefulWidget implements AutoRouteWrapper {
   const TvDetailsScreen({super.key, required this.tvShowId});
   final int tvShowId;
 
@@ -94,7 +94,7 @@ class _TvDetailsScreenState extends State<TvDetailsScreen> with AutoRouteAwareSt
               left: 20,
               child: CustomIconButton(
                 onPressed: () {
-                  AutoRouter.of(context).pop();
+                  context.maybePop();
                 },
                 icon: Icons.arrow_back,
               ),

@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
@@ -17,7 +17,7 @@ import 'package:tmda/features/person/presentation/cubit/person_cubit.dart';
 import 'package:tmda/injection_container.dart';
 
 @RoutePage()
-class PersonScreen extends StatelessWidget with AutoRouteWrapper {
+class PersonScreen extends StatelessWidget implements AutoRouteWrapper {
   final int personId;
   final PersonScreenType personScreenType;
 
@@ -114,7 +114,7 @@ class PersonScreen extends StatelessWidget with AutoRouteWrapper {
               left: 20,
               child: CustomIconButton(
                 onPressed: () {
-                  context.popRoute();
+                  context.maybePop();
                 },
                 icon: Icons.arrow_back,
               ),

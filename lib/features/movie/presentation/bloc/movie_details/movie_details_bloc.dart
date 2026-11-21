@@ -41,7 +41,7 @@ class MovieDetailsBloc extends Bloc<MovieDetailsEvent, MovieDetailsState> {
         transformer: droppable());
   }
 
-  Future<void> _getMovieDetailsEvent(event, emit) async {
+  Future<void> _getMovieDetailsEvent(GetMovieDetailsEvent event, Emitter<MovieDetailsState> emit) async {
     _userSessionId = await _getSessionIdUseCase();
     final movieDetails = await _getMovieDetailsUseCase(
       movieId: event.movieId,
@@ -65,7 +65,7 @@ class MovieDetailsBloc extends Bloc<MovieDetailsEvent, MovieDetailsState> {
     );
   }
 
-  Future<void> _getMovieStatesEvent(event, emit) async {
+  Future<void> _getMovieStatesEvent(GetMovieStatesEvent event, Emitter<MovieDetailsState> emit) async {
     final movieDetails = await _getMovieStateUseCase(
       movieId: event.movieId,
       sessionId: _userSessionId,
@@ -89,11 +89,11 @@ class MovieDetailsBloc extends Bloc<MovieDetailsEvent, MovieDetailsState> {
     );
   }
 
-  Future<void> _playMovieTrailerEvent(event, emit) async {
+  Future<void> _playMovieTrailerEvent(PlayMovieTrailerEvent event, Emitter<MovieDetailsState> emit) async {
     await _playMovieTrailerUseCase(event.movieVideoKey);
   }
 
-  Future<void> _addOrRemoveFromWatchListEvent(event, emit) async {
+  Future<void> _addOrRemoveFromWatchListEvent(AddOrRemoveFromWatchListEvent event, Emitter<MovieDetailsState> emit) async {
     final result = await _addOrRemoveFromWatchListUseCase(
       isInWatchList: event.isInWatchList,
       movieId: event.movieId,
@@ -114,7 +114,7 @@ class MovieDetailsBloc extends Bloc<MovieDetailsEvent, MovieDetailsState> {
     );
   }
 
-  void _onScrollAnimationEvent(event, emit) {
+  void _onScrollAnimationEvent(OnScrollAnimationEvent event, Emitter<MovieDetailsState> emit) {
     emit(
       state.copyWith(
         animatedContainerHeight: event.animatedContainerHeight,

@@ -61,7 +61,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     on<ChangeSearchTabEvent>(_changeSearchTabEvent);
   }
 
-  Future<void> _searchForMoviesEvent(event, emit) async {
+  Future<void> _searchForMoviesEvent(SearchForMovieEvent event, Emitter<SearchState> emit) async {
     emit(state.copyWith(searchState: BlocState.loading));
     final String sessionId = await _getSessionIdUseCase();
     movieSearchInput = event.movieName;
@@ -92,7 +92,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     );
   }
 
-  Future<void> _searchForTvShowEvent(event, emit) async {
+  Future<void> _searchForTvShowEvent(SearchForTvShowEvent event, Emitter<SearchState> emit) async {
     emit(state.copyWith(searchState: BlocState.loading));
     final String sessionId = await _getSessionIdUseCase();
     tvSearchInput = event.tvShowName;
@@ -124,7 +124,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     );
   }
 
-  Future<void> _searchForPersonEvent(event, emit) async {
+  Future<void> _searchForPersonEvent(SearchForPersonEvent event, Emitter<SearchState> emit) async {
     emit(state.copyWith(searchState: BlocState.loading));
     final String sessionId = await _getSessionIdUseCase();
     personSearchInput = event.personName;
@@ -153,7 +153,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     );
   }
 
-  Future<void> _loadMoreMoviesEvent(event, emit) async {
+  Future<void> _loadMoreMoviesEvent(LoadMoreMoviesEvent event, Emitter<SearchState> emit) async {
     final String sessionId = await _getSessionIdUseCase();
     if (state.hasMoviesListReachedMax == false) {
       await _searchForMovieUseCase(
@@ -193,7 +193,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     }
   }
 
-  Future<void> _loadMoreTvShowsEvent(event, emit) async {
+  Future<void> _loadMoreTvShowsEvent(LoadMoreTvShowsEvent event, Emitter<SearchState> emit) async {
     final String sessionId = await _getSessionIdUseCase();
     if (state.hasTvShowsListReachedMax == false) {
       await _searchForTvShowUseCase(
@@ -232,7 +232,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     }
   }
 
-  Future<void> _loadMorePersonsEvent(event, emit) async {
+  Future<void> _loadMorePersonsEvent(LoadMorePersonsEvent event, Emitter<SearchState> emit) async {
     final String sessionId = await _getSessionIdUseCase();
     if (state.hasPersonListReachedMax == false) {
       await _searchForPersonUseCase(
@@ -272,7 +272,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     }
   }
 
-  Future<void> _retryPersonSearchEvent(event, emit) async {
+  Future<void> _retryPersonSearchEvent(RetryPersonSearchEvent event, Emitter<SearchState> emit) async {
     emit(state.copyWith(searchState: BlocState.loading));
     final String sessionId = await _getSessionIdUseCase();
     await _searchForPersonUseCase(
@@ -298,7 +298,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     );
   }
 
-  Future<void> _retryMovieSearchEvent(event, emit) async {
+  Future<void> _retryMovieSearchEvent(RetryMovieSearchEvent event, Emitter<SearchState> emit) async {
     emit(state.copyWith(searchState: BlocState.loading));
     final String sessionId = await _getSessionIdUseCase();
     await _searchForMovieUseCase(
@@ -326,7 +326,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     );
   }
 
-  Future<void> _retryTvShowSearchEvent(event, emit) async {
+  Future<void> _retryTvShowSearchEvent(RetryTvShowSearchEvent event, Emitter<SearchState> emit) async {
     emit(state.copyWith(searchState: BlocState.loading));
     final String sessionId = await _getSessionIdUseCase();
     await _searchForTvShowUseCase(
@@ -354,7 +354,7 @@ class SearchBloc extends Bloc<SearchEvent, SearchState> {
     );
   }
 
-  void _changeSearchTabEvent(event, emit) {
+  void _changeSearchTabEvent(ChangeSearchTabEvent event, Emitter<SearchState> emit) {
     emit(state.copyWith(tabIndex: event.tabIndex));
   }
 }

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:tmda/core/widgets/fade_in_animation.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tmda/core/util/strings_manager.dart';
 import 'package:tmda/core/widgets/tilted_image.dart';
@@ -21,9 +21,9 @@ class PersonCard extends StatelessWidget {
   final String errorAvatarPath;
   @override
   Widget build(BuildContext context) {
-    return Animate(
-      effects: [FadeEffect(duration: 400.ms)],
-      child: InkWell(
+    return FadeInAnimation(
+        duration: const Duration(milliseconds: 400),
+        child: InkWell(
         onTap: onTap,
         child: Transform(
           transform: Matrix4.skewX(-0.06),
@@ -32,7 +32,7 @@ class PersonCard extends StatelessWidget {
             height: 210,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(30),
-              color: Colors.black.withOpacity(0.3),
+              color: Colors.black.withValues(alpha: 0.3),
             ),
             child: Stack(
               children: [

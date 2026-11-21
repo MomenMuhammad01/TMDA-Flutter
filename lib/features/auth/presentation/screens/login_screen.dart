@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:tmda/core/widgets/fade_in_animation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
@@ -17,7 +17,7 @@ import 'package:tmda/features/auth/presentation/widgets/custom_text_field.dart';
 import 'package:tmda/injection_container.dart';
 
 @RoutePage()
-class LoginScreen extends StatefulWidget with AutoRouteWrapper {
+class LoginScreen extends StatefulWidget implements AutoRouteWrapper {
   const LoginScreen({super.key});
 
   @override
@@ -147,9 +147,9 @@ class _LoginScreenState extends State<LoginScreen> {
                             ? Center(
                                 child: Lottie.asset(AssetsManager.neonLoading, width: 150.w, height: 48.h)
                               )
-                            : Animate(
-                              effects: [FadeEffect(duration: 150.ms)],
-                              child: Text(
+                            : FadeInAnimation(
+        duration: const Duration(milliseconds: 150),
+        child: Text(
                                   StringsManager.login,
                                   style: Theme.of(context).textTheme.titleLarge,
                                 ),
@@ -165,7 +165,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 .textTheme
                                 .bodyMedium!
                                 .copyWith(
-                                  color: Colors.white.withOpacity(0.6),
+                                  color: Colors.white.withValues(alpha: 0.6),
                                 ),
                           ),
                           TextButton(

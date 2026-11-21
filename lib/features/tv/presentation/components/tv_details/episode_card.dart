@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tmda/core/util/assets_manager.dart';
 import 'package:tmda/core/util/color_manager.dart';
@@ -30,7 +30,7 @@ class EpisodeCard extends StatelessWidget {
       height: 190.h,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20).w,
-        color: Colors.black.withOpacity(0.3),
+        color: Colors.black.withValues(alpha: 0.3),
       ),
       child: Row(
         children: [

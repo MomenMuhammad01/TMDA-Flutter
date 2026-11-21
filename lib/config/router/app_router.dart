@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:injectable/injectable.dart';
 import 'package:tmda/core/util/enums.dart';
 import 'package:tmda/features/account/presentation/screen/account_screen.dart';
@@ -21,7 +21,7 @@ part 'app_router.gr.dart';
 
 @AutoRouterConfig(replaceInRouteName: 'Screen,Route')
 @singleton
-class AppRouter extends _$AppRouter {
+class AppRouter extends RootStackRouter {
   @override
   RouteType get defaultRouteType => const RouteType.material();
 
@@ -47,7 +47,7 @@ class AppRouter extends _$AppRouter {
             CustomRoute(
               page: MovieTabRoute.page,
               transitionsBuilder: TransitionsBuilders.fadeIn,
-              durationInMilliseconds: 400,
+              duration: const Duration(milliseconds: 400),
               path: 'movie',
               children: [
                 AutoRoute(
@@ -57,24 +57,24 @@ class AppRouter extends _$AppRouter {
                 CustomRoute(
                   page: SeeAllMoviesRoute.page,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
-                  durationInMilliseconds: 400,
+                  duration: const Duration(milliseconds: 400),
                 ),
                 CustomRoute(
                   page: MovieDetailsRoute.page,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
-                  durationInMilliseconds: 400,
+                  duration: const Duration(milliseconds: 400),
                 ),
                 CustomRoute(
                   page: PersonRoute.page,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
-                  durationInMilliseconds: 400,
+                  duration: const Duration(milliseconds: 400),
                 ),
               ],
             ),
             CustomRoute(
               page: TvShowsTabRoute.page,
               transitionsBuilder: TransitionsBuilders.fadeIn,
-              durationInMilliseconds: 400,
+              duration: const Duration(milliseconds: 400),
               path: 'tv',
               children: [
                 AutoRoute(
@@ -84,17 +84,17 @@ class AppRouter extends _$AppRouter {
                 CustomRoute(
                   page: TvDetailsRoute.page,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
-                  durationInMilliseconds: 400,
+                  duration: const Duration(milliseconds: 400),
                 ),
                 CustomRoute(
                   page: SeeAllTvShowsRoute.page,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
-                  durationInMilliseconds: 400,
+                  duration: const Duration(milliseconds: 400),
                 ),
                 CustomRoute(
                   page: PersonRoute.page,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
-                  durationInMilliseconds: 400,
+                  duration: const Duration(milliseconds: 400),
                 ),
               ],
             ),
@@ -109,27 +109,27 @@ class AppRouter extends _$AppRouter {
                 CustomRoute(
                   page: MovieDetailsRoute.page,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
-                  durationInMilliseconds: 400,
+                  duration: const Duration(milliseconds: 400),
                 ),
                 CustomRoute(
                   page: TvDetailsRoute.page,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
-                  durationInMilliseconds: 400,
+                  duration: const Duration(milliseconds: 400),
                 ),
                 CustomRoute(
                   page: SeeAllMoviesRoute.page,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
-                  durationInMilliseconds: 400,
+                  duration: const Duration(milliseconds: 400),
                 ),
                 CustomRoute(
                   page: SeeAllTvShowsRoute.page,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
-                  durationInMilliseconds: 400,
+                  duration: const Duration(milliseconds: 400),
                 ),
                 CustomRoute(
                   page: PersonRoute.page,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
-                  durationInMilliseconds: 400,
+                  duration: const Duration(milliseconds: 400),
                 ),
               ],
             ),
@@ -137,7 +137,7 @@ class AppRouter extends _$AppRouter {
               page: AccountTabRoute.page,
               path: 'account',
               transitionsBuilder: TransitionsBuilders.fadeIn,
-              durationInMilliseconds: 400,
+              duration: const Duration(milliseconds: 400),
               children: [
                 AutoRoute(
                   page: AccountRoute.page,
@@ -146,22 +146,22 @@ class AppRouter extends _$AppRouter {
                 CustomRoute(
                   page: AccountSeeAllRoute.page,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
-                  durationInMilliseconds: 400,
+                  duration: const Duration(milliseconds: 400),
                 ),
                 CustomRoute(
                   page: MovieDetailsRoute.page,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
-                  durationInMilliseconds: 400,
+                  duration: const Duration(milliseconds: 400),
                 ),
                 CustomRoute(
                   page: TvDetailsRoute.page,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
-                  durationInMilliseconds: 400,
+                  duration: const Duration(milliseconds: 400),
                 ),
                 CustomRoute(
                   page: PersonRoute.page,
                   transitionsBuilder: TransitionsBuilders.fadeIn,
-                  durationInMilliseconds: 400,
+                  duration: const Duration(milliseconds: 400),
                 ),
               ],
             ),

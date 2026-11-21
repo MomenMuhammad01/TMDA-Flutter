@@ -32,7 +32,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
     on<ChangeIndicatorIndexEvent>(_changeIndicatorIndexEvent);
   }
 
-  Future<void> _getNowPlayingMovieEvent(event, emit) async {
+  Future<void> _getNowPlayingMovieEvent(GetNowPlayingMoviesEvent event, Emitter<MoviesState> emit) async {
     await _getNowPlayingMoviesUseCase().then(
       (value) => value.fold(
         (nowPlayingMoviesFail) => emit(
@@ -51,7 +51,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
     );
   }
 
-  Future<void> _getNewMoviesEvent(event, emit) async {
+  Future<void> _getNewMoviesEvent(GetNewMoviesEvent event, Emitter<MoviesState> emit) async {
     await _getNewMoviesUseCase().then(
       (value) => value.fold(
         (newMoviesLoadFail) => emit(
@@ -70,7 +70,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
     );
   }
 
-  Future<void> _getPopularMoviesEvent(event, emit) async {
+  Future<void> _getPopularMoviesEvent(GetPopularMoviesEvent event, Emitter<MoviesState> emit) async {
     await _getPopularMoviesUseCase().then(
       (value) => value.fold(
         (popularMoviesLoadFail) => emit(
@@ -89,7 +89,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
     );
   }
 
-  Future<void> _getTopRatedMoviesEvent(event, emit) async {
+  Future<void> _getTopRatedMoviesEvent(GetTopRatedMoviesEvent event, Emitter<MoviesState> emit) async {
     await _getTopRatedMoviesUseCase().then(
       (value) => value.fold(
         (topRatedMoviesLoadFail) => emit(
@@ -107,7 +107,7 @@ class MoviesBloc extends Bloc<MoviesEvent, MoviesState> {
     );
   }
 
-  void _changeIndicatorIndexEvent(event, emit) {
+  void _changeIndicatorIndexEvent(ChangeIndicatorIndexEvent event, Emitter<MoviesState> emit) {
     emit(state.copyWith(indicatorIndex: event.indicatorIndex));
   }
 }

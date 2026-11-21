@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tmda/config/router/app_router.dart';
 import 'package:tmda/core/icons/solar_system_icons.dart';
@@ -29,18 +29,15 @@ class _NavigationTabsState extends State<NavigationTabs> {
         AccountRoute(),
       ],
       bottomNavigationBuilder: (_, tabsRouter) {
-        return WillPopScope(
-          onWillPop: () async {
-            if (tabsRouter.activeIndex == 0) {
-              return Future.value(true);
-            } else {
-              tabsRouter.setActiveIndex(tabsRouter.activeIndex - 1);
-              return Future.value(false);
-            }
+        return PopScope(
+          canPop: tabsRouter.activeIndex == 0,
+          onPopInvokedWithResult: (didPop, result) {
+            if (didPop) return;
+            tabsRouter.setActiveIndex(tabsRouter.activeIndex - 1);
           },
           child: Container(
             decoration: BoxDecoration(
-              color: Colors.black.withOpacity(0.5),
+              color: Colors.black.withValues(alpha: 0.5),
               borderRadius: BorderRadius.only(
                 topLeft: const Radius.circular(15.0).w,
                 topRight: const Radius.circular(15.0).w,

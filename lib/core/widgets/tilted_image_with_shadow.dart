@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tmda/core/constants/api_constants.dart';
@@ -27,7 +27,7 @@ class TiltedImageWithShadow extends StatelessWidget {
         borderRadius: BorderRadius.all(const Radius.circular(20).w),
         child: ColorFiltered(
           colorFilter: ColorFilter.mode(
-            Colors.black.withOpacity(0.3),
+            Colors.black.withValues(alpha: 0.3),
             BlendMode.darken,
           ),
           child: CachedNetworkImage(

@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
@@ -18,7 +18,7 @@ import 'package:tmda/features/search/presentation/components/tv_shows_search_com
 import 'package:tmda/injection_container.dart';
 
 @RoutePage()
-class SearchScreen extends StatefulWidget with AutoRouteWrapper {
+class SearchScreen extends StatefulWidget implements AutoRouteWrapper {
   const SearchScreen({super.key});
 
   @override

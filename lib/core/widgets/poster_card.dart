@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:tmda/core/widgets/fade_in_animation.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tmda/core/icons/solar_system_icons.dart';
@@ -35,9 +35,9 @@ class PosterCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Animate(
-      effects: [FadeEffect(duration: 400.ms)],
-      child: InkWell(
+    return FadeInAnimation(
+        duration: const Duration(milliseconds: 400),
+        child: InkWell(
         onTap: onTap,
         child: Stack(
           children: [

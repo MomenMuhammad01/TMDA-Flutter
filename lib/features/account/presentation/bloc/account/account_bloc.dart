@@ -37,7 +37,7 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
     on<AccountLogoutEvent>(_accountLogoutEvent);
   }
 
-  Future<void> _getAccountDetailsEvent(event, emit) async {
+  Future<void> _getAccountDetailsEvent(GetAccountDetailsEvent event, Emitter<AccountState> emit) async {
     sessionId = await getAccountSessionIdUseCase();
     await getAccountDetailsUseCase(sessionId: sessionId).then(
       (value) => value.fold(
@@ -57,7 +57,7 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
     );
   }
 
-  Future<void> _getAccountMoviesWatchListEvent(event, emit) async {
+  Future<void> _getAccountMoviesWatchListEvent(GetAccountMoviesWatchListEvent event, Emitter<AccountState> emit) async {
     sessionId = await getAccountSessionIdUseCase();
     await getMoviesWatchListUseCase(sessionId: sessionId).then(
       (value) => value.fold(
@@ -77,7 +77,7 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
     );
   }
 
-  Future<void> _getAccountTvShowsWatchListEvent(event, emit) async {
+  Future<void> _getAccountTvShowsWatchListEvent(GetAccountTvShowsWatchListEvent event, Emitter<AccountState> emit) async {
     sessionId = await getAccountSessionIdUseCase();
     await getTvShowsWatchListUseCase(sessionId: sessionId).then(
       (value) => value.fold(
@@ -97,7 +97,7 @@ class AccountBloc extends Bloc<AccountEvent, AccountState> {
     );
   }
 
-  Future<void> _accountLogoutEvent(event, emit) async {
+  Future<void> _accountLogoutEvent(AccountLogoutEvent event, Emitter<AccountState> emit) async {
     await accountLogoutUseCase(sessionId: sessionId).then(
       (value) => value.fold(
         (accountLogout) => emit(

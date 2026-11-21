@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -9,244 +10,20 @@
 
 part of 'app_router.dart';
 
-abstract class _$AppRouter extends RootStackRouter {
-  // ignore: unused_element
-  _$AppRouter({super.navigatorKey});
-
-  @override
-  final Map<String, PageFactory> pagesMap = {
-    MovieTabRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const MoviesTab(),
-      );
-    },
-    TvShowsTabRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const TvShowsTab(),
-      );
-    },
-    SearchTabRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const SearchTab(),
-      );
-    },
-    AccountTabRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const AccountTab(),
-      );
-    },
-    AuthRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const Auth(),
-      );
-    },
-    AccountRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(child: const AccountScreen()),
-      );
-    },
-    AccountSeeAllRoute.name: (routeData) {
-      final args = routeData.argsAs<AccountSeeAllRouteArgs>();
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(
-            child: AccountSeeAllScreen(
-          key: args.key,
-          watchListType: args.watchListType,
-        )),
-      );
-    },
-    LoginRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(child: const LoginScreen()),
-      );
-    },
-    SelectionRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const SelectionScreen(),
-      );
-    },
-    SplashRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(child: const SplashScreen()),
-      );
-    },
-    MovieDetailsRoute.name: (routeData) {
-      final args = routeData.argsAs<MovieDetailsRouteArgs>();
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(
-            child: MovieDetailsScreen(
-          key: args.key,
-          movieId: args.movieId,
-        )),
-      );
-    },
-    MovieRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(child: const MovieScreen()),
-      );
-    },
-    SeeAllMoviesRoute.name: (routeData) {
-      final args = routeData.argsAs<SeeAllMoviesRouteArgs>();
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(
-            child: SeeAllMoviesScreen(
-          key: args.key,
-          movieType: args.movieType,
-          movieId: args.movieId,
-        )),
-      );
-    },
-    MainNavigationTabs.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: const NavigationTabs(),
-      );
-    },
-    PersonRoute.name: (routeData) {
-      final args = routeData.argsAs<PersonRouteArgs>();
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(
-            child: PersonScreen(
-          key: args.key,
-          personId: args.personId,
-          personScreenType: args.personScreenType,
-        )),
-      );
-    },
-    SearchRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(child: const SearchScreen()),
-      );
-    },
-    SeeAllTvShowsRoute.name: (routeData) {
-      final args = routeData.argsAs<SeeAllTvShowsRouteArgs>();
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(
-            child: SeeAllTvShowsScreen(
-          key: args.key,
-          tvShowType: args.tvShowType,
-          tvShowId: args.tvShowId,
-        )),
-      );
-    },
-    TvDetailsRoute.name: (routeData) {
-      final args = routeData.argsAs<TvDetailsRouteArgs>();
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(
-            child: TvDetailsScreen(
-          key: args.key,
-          tvShowId: args.tvShowId,
-        )),
-      );
-    },
-    TvShowRoute.name: (routeData) {
-      return AutoRoutePage<dynamic>(
-        routeData: routeData,
-        child: WrappedRoute(child: const TvShowScreen()),
-      );
-    },
-  };
-}
-
-/// generated route for
-/// [MoviesTab]
-class MovieTabRoute extends PageRouteInfo<void> {
-  const MovieTabRoute({List<PageRouteInfo>? children})
-      : super(
-          MovieTabRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'MovieTabRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [TvShowsTab]
-class TvShowsTabRoute extends PageRouteInfo<void> {
-  const TvShowsTabRoute({List<PageRouteInfo>? children})
-      : super(
-          TvShowsTabRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'TvShowsTabRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [SearchTab]
-class SearchTabRoute extends PageRouteInfo<void> {
-  const SearchTabRoute({List<PageRouteInfo>? children})
-      : super(
-          SearchTabRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'SearchTabRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [AccountTab]
-class AccountTabRoute extends PageRouteInfo<void> {
-  const AccountTabRoute({List<PageRouteInfo>? children})
-      : super(
-          AccountTabRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'AccountTabRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [Auth]
-class AuthRoute extends PageRouteInfo<void> {
-  const AuthRoute({List<PageRouteInfo>? children})
-      : super(
-          AuthRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'AuthRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
 /// generated route for
 /// [AccountScreen]
 class AccountRoute extends PageRouteInfo<void> {
   const AccountRoute({List<PageRouteInfo>? children})
-      : super(
-          AccountRoute.name,
-          initialChildren: children,
-        );
+      : super(AccountRoute.name, initialChildren: children);
 
   static const String name = 'AccountRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return WrappedRoute(child: const AccountScreen());
+    },
+  );
 }
 
 /// generated route for
@@ -258,24 +35,28 @@ class AccountSeeAllRoute extends PageRouteInfo<AccountSeeAllRouteArgs> {
     List<PageRouteInfo>? children,
   }) : super(
           AccountSeeAllRoute.name,
-          args: AccountSeeAllRouteArgs(
-            key: key,
-            watchListType: watchListType,
-          ),
+          args: AccountSeeAllRouteArgs(key: key, watchListType: watchListType),
           initialChildren: children,
         );
 
   static const String name = 'AccountSeeAllRoute';
 
-  static const PageInfo<AccountSeeAllRouteArgs> page =
-      PageInfo<AccountSeeAllRouteArgs>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<AccountSeeAllRouteArgs>();
+      return WrappedRoute(
+        child: AccountSeeAllScreen(
+          key: args.key,
+          watchListType: args.watchListType,
+        ),
+      );
+    },
+  );
 }
 
 class AccountSeeAllRouteArgs {
-  const AccountSeeAllRouteArgs({
-    this.key,
-    required this.watchListType,
-  });
+  const AccountSeeAllRouteArgs({this.key, required this.watchListType});
 
   final Key? key;
 
@@ -285,48 +66,64 @@ class AccountSeeAllRouteArgs {
   String toString() {
     return 'AccountSeeAllRouteArgs{key: $key, watchListType: $watchListType}';
   }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! AccountSeeAllRouteArgs) return false;
+    return key == other.key && watchListType == other.watchListType;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ watchListType.hashCode;
+}
+
+/// generated route for
+/// [AccountTab]
+class AccountTabRoute extends PageRouteInfo<void> {
+  const AccountTabRoute({List<PageRouteInfo>? children})
+      : super(AccountTabRoute.name, initialChildren: children);
+
+  static const String name = 'AccountTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const AccountTab();
+    },
+  );
+}
+
+/// generated route for
+/// [Auth]
+class AuthRoute extends PageRouteInfo<void> {
+  const AuthRoute({List<PageRouteInfo>? children})
+      : super(AuthRoute.name, initialChildren: children);
+
+  static const String name = 'AuthRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const Auth();
+    },
+  );
 }
 
 /// generated route for
 /// [LoginScreen]
 class LoginRoute extends PageRouteInfo<void> {
   const LoginRoute({List<PageRouteInfo>? children})
-      : super(
-          LoginRoute.name,
-          initialChildren: children,
-        );
+      : super(LoginRoute.name, initialChildren: children);
 
   static const String name = 'LoginRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [SelectionScreen]
-class SelectionRoute extends PageRouteInfo<void> {
-  const SelectionRoute({List<PageRouteInfo>? children})
-      : super(
-          SelectionRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'SelectionRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
-}
-
-/// generated route for
-/// [SplashScreen]
-class SplashRoute extends PageRouteInfo<void> {
-  const SplashRoute({List<PageRouteInfo>? children})
-      : super(
-          SplashRoute.name,
-          initialChildren: children,
-        );
-
-  static const String name = 'SplashRoute';
-
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return WrappedRoute(child: const LoginScreen());
+    },
+  );
 }
 
 /// generated route for
@@ -338,24 +135,25 @@ class MovieDetailsRoute extends PageRouteInfo<MovieDetailsRouteArgs> {
     List<PageRouteInfo>? children,
   }) : super(
           MovieDetailsRoute.name,
-          args: MovieDetailsRouteArgs(
-            key: key,
-            movieId: movieId,
-          ),
+          args: MovieDetailsRouteArgs(key: key, movieId: movieId),
           initialChildren: children,
         );
 
   static const String name = 'MovieDetailsRoute';
 
-  static const PageInfo<MovieDetailsRouteArgs> page =
-      PageInfo<MovieDetailsRouteArgs>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<MovieDetailsRouteArgs>();
+      return WrappedRoute(
+        child: MovieDetailsScreen(key: args.key, movieId: args.movieId),
+      );
+    },
+  );
 }
 
 class MovieDetailsRouteArgs {
-  const MovieDetailsRouteArgs({
-    this.key,
-    required this.movieId,
-  });
+  const MovieDetailsRouteArgs({this.key, required this.movieId});
 
   final Key? key;
 
@@ -365,77 +163,64 @@ class MovieDetailsRouteArgs {
   String toString() {
     return 'MovieDetailsRouteArgs{key: $key, movieId: $movieId}';
   }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! MovieDetailsRouteArgs) return false;
+    return key == other.key && movieId == other.movieId;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ movieId.hashCode;
 }
 
 /// generated route for
 /// [MovieScreen]
 class MovieRoute extends PageRouteInfo<void> {
   const MovieRoute({List<PageRouteInfo>? children})
-      : super(
-          MovieRoute.name,
-          initialChildren: children,
-        );
+      : super(MovieRoute.name, initialChildren: children);
 
   static const String name = 'MovieRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return WrappedRoute(child: const MovieScreen());
+    },
+  );
 }
 
 /// generated route for
-/// [SeeAllMoviesScreen]
-class SeeAllMoviesRoute extends PageRouteInfo<SeeAllMoviesRouteArgs> {
-  SeeAllMoviesRoute({
-    Key? key,
-    required MovieType movieType,
-    int? movieId,
-    List<PageRouteInfo>? children,
-  }) : super(
-          SeeAllMoviesRoute.name,
-          args: SeeAllMoviesRouteArgs(
-            key: key,
-            movieType: movieType,
-            movieId: movieId,
-          ),
-          initialChildren: children,
-        );
+/// [MoviesTab]
+class MovieTabRoute extends PageRouteInfo<void> {
+  const MovieTabRoute({List<PageRouteInfo>? children})
+      : super(MovieTabRoute.name, initialChildren: children);
 
-  static const String name = 'SeeAllMoviesRoute';
+  static const String name = 'MovieTabRoute';
 
-  static const PageInfo<SeeAllMoviesRouteArgs> page =
-      PageInfo<SeeAllMoviesRouteArgs>(name);
-}
-
-class SeeAllMoviesRouteArgs {
-  const SeeAllMoviesRouteArgs({
-    this.key,
-    required this.movieType,
-    this.movieId,
-  });
-
-  final Key? key;
-
-  final MovieType movieType;
-
-  final int? movieId;
-
-  @override
-  String toString() {
-    return 'SeeAllMoviesRouteArgs{key: $key, movieType: $movieType, movieId: $movieId}';
-  }
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const MoviesTab();
+    },
+  );
 }
 
 /// generated route for
 /// [NavigationTabs]
 class MainNavigationTabs extends PageRouteInfo<void> {
   const MainNavigationTabs({List<PageRouteInfo>? children})
-      : super(
-          MainNavigationTabs.name,
-          initialChildren: children,
-        );
+      : super(MainNavigationTabs.name, initialChildren: children);
 
   static const String name = 'MainNavigationTabs';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const NavigationTabs();
+    },
+  );
 }
 
 /// generated route for
@@ -458,7 +243,19 @@ class PersonRoute extends PageRouteInfo<PersonRouteArgs> {
 
   static const String name = 'PersonRoute';
 
-  static const PageInfo<PersonRouteArgs> page = PageInfo<PersonRouteArgs>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<PersonRouteArgs>();
+      return WrappedRoute(
+        child: PersonScreen(
+          key: args.key,
+          personId: args.personId,
+          personScreenType: args.personScreenType,
+        ),
+      );
+    },
+  );
 }
 
 class PersonRouteArgs {
@@ -478,20 +275,117 @@ class PersonRouteArgs {
   String toString() {
     return 'PersonRouteArgs{key: $key, personId: $personId, personScreenType: $personScreenType}';
   }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! PersonRouteArgs) return false;
+    return key == other.key &&
+        personId == other.personId &&
+        personScreenType == other.personScreenType;
+  }
+
+  @override
+  int get hashCode =>
+      key.hashCode ^ personId.hashCode ^ personScreenType.hashCode;
 }
 
 /// generated route for
 /// [SearchScreen]
 class SearchRoute extends PageRouteInfo<void> {
   const SearchRoute({List<PageRouteInfo>? children})
-      : super(
-          SearchRoute.name,
-          initialChildren: children,
-        );
+      : super(SearchRoute.name, initialChildren: children);
 
   static const String name = 'SearchRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return WrappedRoute(child: const SearchScreen());
+    },
+  );
+}
+
+/// generated route for
+/// [SearchTab]
+class SearchTabRoute extends PageRouteInfo<void> {
+  const SearchTabRoute({List<PageRouteInfo>? children})
+      : super(SearchTabRoute.name, initialChildren: children);
+
+  static const String name = 'SearchTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const SearchTab();
+    },
+  );
+}
+
+/// generated route for
+/// [SeeAllMoviesScreen]
+class SeeAllMoviesRoute extends PageRouteInfo<SeeAllMoviesRouteArgs> {
+  SeeAllMoviesRoute({
+    Key? key,
+    required MovieType movieType,
+    int? movieId,
+    List<PageRouteInfo>? children,
+  }) : super(
+          SeeAllMoviesRoute.name,
+          args: SeeAllMoviesRouteArgs(
+            key: key,
+            movieType: movieType,
+            movieId: movieId,
+          ),
+          initialChildren: children,
+        );
+
+  static const String name = 'SeeAllMoviesRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<SeeAllMoviesRouteArgs>();
+      return WrappedRoute(
+        child: SeeAllMoviesScreen(
+          key: args.key,
+          movieType: args.movieType,
+          movieId: args.movieId,
+        ),
+      );
+    },
+  );
+}
+
+class SeeAllMoviesRouteArgs {
+  const SeeAllMoviesRouteArgs({
+    this.key,
+    required this.movieType,
+    this.movieId,
+  });
+
+  final Key? key;
+
+  final MovieType movieType;
+
+  final int? movieId;
+
+  @override
+  String toString() {
+    return 'SeeAllMoviesRouteArgs{key: $key, movieType: $movieType, movieId: $movieId}';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! SeeAllMoviesRouteArgs) return false;
+    return key == other.key &&
+        movieType == other.movieType &&
+        movieId == other.movieId;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ movieType.hashCode ^ movieId.hashCode;
 }
 
 /// generated route for
@@ -514,8 +408,19 @@ class SeeAllTvShowsRoute extends PageRouteInfo<SeeAllTvShowsRouteArgs> {
 
   static const String name = 'SeeAllTvShowsRoute';
 
-  static const PageInfo<SeeAllTvShowsRouteArgs> page =
-      PageInfo<SeeAllTvShowsRouteArgs>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<SeeAllTvShowsRouteArgs>();
+      return WrappedRoute(
+        child: SeeAllTvShowsScreen(
+          key: args.key,
+          tvShowType: args.tvShowType,
+          tvShowId: args.tvShowId,
+        ),
+      );
+    },
+  );
 }
 
 class SeeAllTvShowsRouteArgs {
@@ -535,6 +440,50 @@ class SeeAllTvShowsRouteArgs {
   String toString() {
     return 'SeeAllTvShowsRouteArgs{key: $key, tvShowType: $tvShowType, tvShowId: $tvShowId}';
   }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! SeeAllTvShowsRouteArgs) return false;
+    return key == other.key &&
+        tvShowType == other.tvShowType &&
+        tvShowId == other.tvShowId;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ tvShowType.hashCode ^ tvShowId.hashCode;
+}
+
+/// generated route for
+/// [SelectionScreen]
+class SelectionRoute extends PageRouteInfo<void> {
+  const SelectionRoute({List<PageRouteInfo>? children})
+      : super(SelectionRoute.name, initialChildren: children);
+
+  static const String name = 'SelectionRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const SelectionScreen();
+    },
+  );
+}
+
+/// generated route for
+/// [SplashScreen]
+class SplashRoute extends PageRouteInfo<void> {
+  const SplashRoute({List<PageRouteInfo>? children})
+      : super(SplashRoute.name, initialChildren: children);
+
+  static const String name = 'SplashRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return WrappedRoute(child: const SplashScreen());
+    },
+  );
 }
 
 /// generated route for
@@ -546,24 +495,25 @@ class TvDetailsRoute extends PageRouteInfo<TvDetailsRouteArgs> {
     List<PageRouteInfo>? children,
   }) : super(
           TvDetailsRoute.name,
-          args: TvDetailsRouteArgs(
-            key: key,
-            tvShowId: tvShowId,
-          ),
+          args: TvDetailsRouteArgs(key: key, tvShowId: tvShowId),
           initialChildren: children,
         );
 
   static const String name = 'TvDetailsRoute';
 
-  static const PageInfo<TvDetailsRouteArgs> page =
-      PageInfo<TvDetailsRouteArgs>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      final args = data.argsAs<TvDetailsRouteArgs>();
+      return WrappedRoute(
+        child: TvDetailsScreen(key: args.key, tvShowId: args.tvShowId),
+      );
+    },
+  );
 }
 
 class TvDetailsRouteArgs {
-  const TvDetailsRouteArgs({
-    this.key,
-    required this.tvShowId,
-  });
+  const TvDetailsRouteArgs({this.key, required this.tvShowId});
 
   final Key? key;
 
@@ -573,18 +523,46 @@ class TvDetailsRouteArgs {
   String toString() {
     return 'TvDetailsRouteArgs{key: $key, tvShowId: $tvShowId}';
   }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    if (other is! TvDetailsRouteArgs) return false;
+    return key == other.key && tvShowId == other.tvShowId;
+  }
+
+  @override
+  int get hashCode => key.hashCode ^ tvShowId.hashCode;
 }
 
 /// generated route for
 /// [TvShowScreen]
 class TvShowRoute extends PageRouteInfo<void> {
   const TvShowRoute({List<PageRouteInfo>? children})
-      : super(
-          TvShowRoute.name,
-          initialChildren: children,
-        );
+      : super(TvShowRoute.name, initialChildren: children);
 
   static const String name = 'TvShowRoute';
 
-  static const PageInfo<void> page = PageInfo<void>(name);
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return WrappedRoute(child: const TvShowScreen());
+    },
+  );
+}
+
+/// generated route for
+/// [TvShowsTab]
+class TvShowsTabRoute extends PageRouteInfo<void> {
+  const TvShowsTabRoute({List<PageRouteInfo>? children})
+      : super(TvShowsTabRoute.name, initialChildren: children);
+
+  static const String name = 'TvShowsTabRoute';
+
+  static PageInfo page = PageInfo(
+    name,
+    builder: (data) {
+      return const TvShowsTab();
+    },
+  );
 }

@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:tmda/core/widgets/fade_in_animation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
@@ -93,9 +93,9 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> with AutoRouteA
                       child: Lottie.asset(AssetsManager.neonLoading),
                     );
                   case BlocState.success:
-                    return Animate(
-                      effects: [FadeEffect(duration: 250.ms)],
-                      child: ListView(
+                    return FadeInAnimation(
+        duration: const Duration(milliseconds: 250),
+        child: ListView(
                         controller: _scrollController,
                         padding: EdgeInsets.zero,
                         children: [
@@ -123,8 +123,8 @@ class _MovieDetailsScreenState extends State<MovieDetailsScreen> with AutoRouteA
               top: 50,
               left: 20,
               child: CustomIconButton(
-                onPressed: ()  {
-                  AutoRouter.of(context).pop();
+                onPressed: () {
+                  context.maybePop();
                 },
                 icon: Icons.arrow_back,
               ),

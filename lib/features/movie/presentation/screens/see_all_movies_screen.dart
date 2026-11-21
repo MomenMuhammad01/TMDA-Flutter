@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
@@ -14,7 +14,7 @@ import 'package:tmda/features/movie/presentation/components/movie_see_all/see_al
 import 'package:tmda/injection_container.dart';
 
 @RoutePage()
-class SeeAllMoviesScreen extends StatefulWidget with AutoRouteWrapper{
+class SeeAllMoviesScreen extends StatefulWidget implements AutoRouteWrapper {
   const SeeAllMoviesScreen({super.key, required this.movieType, this.movieId});
 
   final MovieType movieType;
@@ -112,7 +112,7 @@ class _SeeAllMoviesScreenState extends State<SeeAllMoviesScreen> {
               children: [
                 CustomIconButton(
                   onPressed: () {
-                    context.popRoute();
+                    context.maybePop();
                   },
                   icon: Icons.arrow_back,
                 ),

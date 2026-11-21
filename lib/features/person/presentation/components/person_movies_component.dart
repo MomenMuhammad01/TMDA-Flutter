@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:tmda/core/widgets/fade_in_animation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tmda/config/router/app_router.dart';
@@ -20,9 +20,9 @@ class PersonMoviesComponent extends StatelessWidget {
     return BlocBuilder<PersonCubit, PersonState>(
       builder: (context, state) {
         if (state.personData.movies.isNotEmpty) {
-          return Animate(
-            effects: [FadeEffect(duration: 250.ms)],
-            child: Column(
+          return FadeInAnimation(
+        duration: const Duration(milliseconds: 250),
+        child: Column(
               children: [
                 const SectionWidget(
                   title: StringsManager.movie,
@@ -59,9 +59,9 @@ class PersonMoviesComponent extends StatelessWidget {
             ),
           );
         } else {
-          return Animate(
-            effects: [FadeEffect(duration: 150.ms)],
-            child: Column(
+          return FadeInAnimation(
+        duration: const Duration(milliseconds: 150),
+        child: Column(
               children: [
                 const SectionWidget(
                   title: StringsManager.movie,

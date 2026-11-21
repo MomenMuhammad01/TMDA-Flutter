@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
@@ -14,7 +14,7 @@ import 'package:tmda/features/tv/presentation/components/tv_see_all/see_all_tv_s
 import 'package:tmda/injection_container.dart';
 
 @RoutePage()
-class SeeAllTvShowsScreen extends StatefulWidget with AutoRouteWrapper {
+class SeeAllTvShowsScreen extends StatefulWidget implements AutoRouteWrapper {
   final TvShowType tvShowType;
   final int? tvShowId;
 
@@ -113,7 +113,7 @@ class _SeeAllTvShowsScreenState extends State<SeeAllTvShowsScreen> {
               children: [
                 CustomIconButton(
                   onPressed: () {
-                    context.popRoute();
+                    context.maybePop();
                   },
                   icon: Icons.arrow_back,
                 ),

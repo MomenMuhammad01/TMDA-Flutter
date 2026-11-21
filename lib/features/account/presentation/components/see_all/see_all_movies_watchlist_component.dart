@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:tmda/core/widgets/fade_in_animation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tmda/config/router/app_router.dart';
@@ -53,15 +53,15 @@ class _SeeAllMoviesWatchListComponentState
     return BlocConsumer<AccountSeeAllBloc, AccountSeeAllState>(
       listener: (context, state) {
         if (state.moviesWatchList.isEmpty) {
-          context.router.pop();
+          context.maybePop();
         }
       },
       buildWhen: (previous, current) =>
           previous.moviesWatchList != current.moviesWatchList,
       builder: (context, state) {
-        return Animate(
-          effects: [FadeEffect(duration: 400.ms)],
-          child: ListView.builder(
+        return FadeInAnimation(
+        duration: const Duration(milliseconds: 400),
+        child: ListView.builder(
             itemCount: state.moviesWatchList.length,
             controller: widget.scrollController,
             scrollDirection: Axis.vertical,

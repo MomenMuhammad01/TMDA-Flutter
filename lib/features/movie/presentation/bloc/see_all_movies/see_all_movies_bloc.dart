@@ -60,7 +60,7 @@ class SeeAllMoviesBloc extends Bloc<SeeAllMoviesEvent, SeeAllMoviesState> {
     on<CheckForMoviesListStatesEvent>(_checkForMoviesListStatesEvent);
   }
 
-  Future<void> _getAllNewMoviesEvent(event, emit) async {
+  Future<void> _getAllNewMoviesEvent(GetAllNewMoviesEvent event, Emitter<SeeAllMoviesState> emit) async {
     if(state.hasSeeAllMoviesListReachedMax == false){
       _sessionId = await _getSessionIdUseCase();
       await _getAllNewMoviesUseCase(
@@ -93,7 +93,7 @@ class SeeAllMoviesBloc extends Bloc<SeeAllMoviesEvent, SeeAllMoviesState> {
     }
   }
 
-  Future<void> _getAllPopularMoviesEvent(event, emit) async {
+  Future<void> _getAllPopularMoviesEvent(GetAllPopularMoviesEvent event, Emitter<SeeAllMoviesState> emit) async {
     if(state.hasSeeAllMoviesListReachedMax == false){
       _sessionId = await _getSessionIdUseCase();
       await _getAllPopularMoviesUseCase(
@@ -126,7 +126,7 @@ class SeeAllMoviesBloc extends Bloc<SeeAllMoviesEvent, SeeAllMoviesState> {
     }
   }
 
-  Future<void> _getAllTopRatedMoviesEvent(event, emit) async {
+  Future<void> _getAllTopRatedMoviesEvent(GetAllTopRatedMoviesEvent event, Emitter<SeeAllMoviesState> emit) async {
     if(state.hasSeeAllMoviesListReachedMax == false){
       _sessionId = await _getSessionIdUseCase();
       await _getAllTopRatedMoviesUseCase(
@@ -159,7 +159,7 @@ class SeeAllMoviesBloc extends Bloc<SeeAllMoviesEvent, SeeAllMoviesState> {
     }
   }
 
-  Future<void> _getAllRecommendedMoviesEvent(event, emit) async {
+  Future<void> _getAllRecommendedMoviesEvent(GetAllRecommendedMoviesEvent event, Emitter<SeeAllMoviesState> emit) async {
     if(state.hasSeeAllMoviesListReachedMax == false){
       _sessionId = await _getSessionIdUseCase();
       await _getAllRecommendedMoviesUseCase(
@@ -195,7 +195,7 @@ class SeeAllMoviesBloc extends Bloc<SeeAllMoviesEvent, SeeAllMoviesState> {
 
   }
 
-  Future<void> _getAllSimilarMoviesEvent(event, emit) async {
+  Future<void> _getAllSimilarMoviesEvent(GetAllSimilarMoviesEvent event, Emitter<SeeAllMoviesState> emit) async {
     if(state.hasSeeAllMoviesListReachedMax == false){
       _sessionId = await _getSessionIdUseCase();
       await _getAllSimilarMoviesUseCase(
@@ -231,7 +231,7 @@ class SeeAllMoviesBloc extends Bloc<SeeAllMoviesEvent, SeeAllMoviesState> {
 
   }
 
-  Future<void> _addOrRemoveFromWatchListEventEvent(event, emit) async {
+  Future<void> _addOrRemoveFromWatchListEventEvent(AddOrRemoveFromWatchListEvent event, Emitter<SeeAllMoviesState> emit) async {
     final result = await _addOrRemoveMovieFromWatchListUseCase(
       isInWatchList: event.isInWatchList,
       movieId: event.movieId,
@@ -257,7 +257,7 @@ class SeeAllMoviesBloc extends Bloc<SeeAllMoviesEvent, SeeAllMoviesState> {
     );
   }
 
-  Future<void> _checkForMovieStatesEvent(event, emit) async {
+  Future<void> _checkForMovieStatesEvent(CheckForMovieStatesEvent event, Emitter<SeeAllMoviesState> emit) async {
     final result = await _getMovieStateUseCase(
       movieId: event.movieId,
       sessionId: _sessionId,
@@ -282,7 +282,7 @@ class SeeAllMoviesBloc extends Bloc<SeeAllMoviesEvent, SeeAllMoviesState> {
     );
   }
 
-  Future<void> _checkForMoviesListStatesEvent(event, emit) async {
+  Future<void> _checkForMoviesListStatesEvent(CheckForMoviesListStatesEvent event, Emitter<SeeAllMoviesState> emit) async {
     final movieIds = state.seeAllMovies.map((movie) => movie.id).toList();
     final movieUpdatedState = await Future.wait(movieIds
         .map((movieId) =>

@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tmda/core/icons/solar_system_icons.dart';
 import 'package:tmda/core/util/color_manager.dart';
@@ -25,7 +25,7 @@ class CustomSearchField extends StatelessWidget {
         cursorColor: ColorsManager.primaryColor,
         decoration: InputDecoration(
           filled: true,
-          fillColor: Colors.black.withOpacity(0.37),
+          fillColor: Colors.black.withValues(alpha: 0.37),
           hintText: 'Search..',
           hintStyle: Theme.of(context).textTheme.bodyMedium!.copyWith(
             color: ColorsManager.inActiveColor,

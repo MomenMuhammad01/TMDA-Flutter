@@ -52,7 +52,7 @@ class TvShowDetailsBloc extends Bloc<TvDetailsEvent, TvShowDetailsState> {
         transformer: droppable());
   }
 
-  Future<void> _getTvShowDetailsEvent(event, emit) async {
+  Future<void> _getTvShowDetailsEvent(GetTvShowDetailsEvent event, Emitter<TvShowDetailsState> emit) async {
     sessionId = await _getSessionIdUseCase();
     await _getTvShowDetailsUseCase(event.tvShowId, sessionId).then(
       (value) => value.fold(
@@ -74,7 +74,7 @@ class TvShowDetailsBloc extends Bloc<TvDetailsEvent, TvShowDetailsState> {
     );
   }
 
-  Future<void> _getTvShowStatesEvent(event, emit) async {
+  Future<void> _getTvShowStatesEvent(GetTvShowStatesEvent event, Emitter<TvShowDetailsState> emit) async {
     sessionId = await _getSessionIdUseCase();
     await _getTvShowStateUseCase(tvShowId: event.tvShowId, sessionId: sessionId)
         .then(
@@ -98,7 +98,7 @@ class TvShowDetailsBloc extends Bloc<TvDetailsEvent, TvShowDetailsState> {
     );
   }
 
-  Future<void> _getSeasonEpisodesEvent(event, emit) async {
+  Future<void> _getSeasonEpisodesEvent(GetSeasonEpisodesEvent event, Emitter<TvShowDetailsState> emit) async {
     final seasonsNumbers =
         state.tvShowDetails.seasons.map((season) => season.number).take(20);
     final seasonsEpisodes = await Future.wait(seasonsNumbers
@@ -129,7 +129,7 @@ class TvShowDetailsBloc extends Bloc<TvDetailsEvent, TvShowDetailsState> {
     }
   }
 
-  Future<void> _addOrRemoveTvFromWatchListEvent(event, emit) async {
+  Future<void> _addOrRemoveTvFromWatchListEvent(AddOrRemoveTvFromWatchListEvent event, Emitter<TvShowDetailsState> emit) async {
     await _addOrRemoveTvFromWatchListUseCase(
       isInWatchList: event.isInWatchList,
       tvShowId: event.tvShowId,
@@ -152,7 +152,7 @@ class TvShowDetailsBloc extends Bloc<TvDetailsEvent, TvShowDetailsState> {
     );
   }
 
-  void _onScrollAnimationEvent(event, emit) {
+  void _onScrollAnimationEvent(OnScrollAnimationEvent event, Emitter<TvShowDetailsState> emit) {
     emit(
       state.copyWith(
         animatedHeight: event.animatedHeight,
@@ -160,15 +160,15 @@ class TvShowDetailsBloc extends Bloc<TvDetailsEvent, TvShowDetailsState> {
     );
   }
 
-  Future<void> _playTvShowVideoEvent(event, emit) async {
+  Future<void> _playTvShowVideoEvent(PlayTvShowVideoEvent event, Emitter<TvShowDetailsState> emit) async {
     await _playTvShowVideoUseCase(youtubeVideoKey: event.videoKey);
   }
 
-  void _changeBodyTabsIndexEvent(event, emit) {
+  void _changeBodyTabsIndexEvent(ChangeBodyTabsIndexEvent event, Emitter<TvShowDetailsState> emit) {
     emit(state.copyWith(bodyTabIndex: event.bodyTabIndex));
   }
 
-  void _changeSeasonsTabsIndexEvent(event, emit) {
+  void _changeSeasonsTabsIndexEvent(ChangeSeasonsTabsIndexEvent event, Emitter<TvShowDetailsState> emit) {
     emit(state.copyWith(seasonsTabIndex: event.seasonsTabIndex));
   }
 }

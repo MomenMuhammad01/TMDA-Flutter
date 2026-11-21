@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -16,7 +16,7 @@ import 'package:tmda/core/widgets/no_connection.dart';
 import 'package:tmda/injection_container.dart';
 
 @RoutePage()
-class AccountSeeAllScreen extends StatefulWidget with AutoRouteWrapper {
+class AccountSeeAllScreen extends StatefulWidget implements AutoRouteWrapper {
   const AccountSeeAllScreen({super.key, required this.watchListType});
 
   final WatchListType watchListType;
@@ -130,7 +130,7 @@ class _AccountSeeAllScreenState extends State<AccountSeeAllScreen> {
               children: [
                 CustomIconButton(
                   onPressed: () {
-                    context.popRoute();
+                    context.maybePop();
                   },
                   icon: Icons.arrow_back,
                 ),

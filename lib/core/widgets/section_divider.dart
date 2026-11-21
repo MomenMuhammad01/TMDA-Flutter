@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 class SectionDivider extends StatelessWidget {
   const SectionDivider({
@@ -10,7 +10,7 @@ class SectionDivider extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: Divider(
-        color: Colors.white.withOpacity(0.8),
+        color: Colors.white.withValues(alpha: 0.8),
         thickness: 1,
         indent: 20,
         endIndent: 30,

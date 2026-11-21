@@ -57,7 +57,7 @@ class AccountSeeAllBloc extends Bloc<AccountSeeAllEvent, AccountSeeAllState> {
         _checkForTvShowsWatchListStatesEvent);
   }
 
-  Future<void> _getAllMoviesWatchListEvent(event, emit) async {
+  Future<void> _getAllMoviesWatchListEvent(GetAllMoviesWatchListEvent event, Emitter<AccountSeeAllState> emit) async {
     sessionId = await getAccountSessionIdUseCase();
     await getAllMoviesWatchListUseCase(
       pageNumber: movieWatchlistPage,
@@ -84,7 +84,7 @@ class AccountSeeAllBloc extends Bloc<AccountSeeAllEvent, AccountSeeAllState> {
     );
   }
 
-  Future<void> _getAllTvShowsWatchListEvent(event, emit) async {
+  Future<void> _getAllTvShowsWatchListEvent(GetAllTvShowsWatchListEvent event, Emitter<AccountSeeAllState> emit) async {
     sessionId = await getAccountSessionIdUseCase();
     await getAllTvShowsWatchListUseCase(
       pageNumber: tvShowWatchListPage,
@@ -113,7 +113,7 @@ class AccountSeeAllBloc extends Bloc<AccountSeeAllEvent, AccountSeeAllState> {
     );
   }
 
-  Future<void> _removeMovieFromWatchListEvent(event, emit) async {
+  Future<void> _removeMovieFromWatchListEvent(RemoveMovieFromWatchListEvent event, Emitter<AccountSeeAllState> emit) async {
     await removeMovieFromWatchListUseCase(
       movieId: event.movieId,
       sessionId: sessionId,
@@ -140,7 +140,7 @@ class AccountSeeAllBloc extends Bloc<AccountSeeAllEvent, AccountSeeAllState> {
     );
   }
 
-  Future<void> _removeTvShowFromWatchListEvent(event, emit) async {
+  Future<void> _removeTvShowFromWatchListEvent(RemoveTvShowFromWatchListEvent event, Emitter<AccountSeeAllState> emit) async {
     final result = await removeTvShowFromWatchListUseCase(
       tvShowId: event.tvShowId,
       sessionId: sessionId,
@@ -166,7 +166,7 @@ class AccountSeeAllBloc extends Bloc<AccountSeeAllEvent, AccountSeeAllState> {
     );
   }
 
-  Future<void> _checkForTvShowStatesEvent(event, emit) async {
+  Future<void> _checkForTvShowStatesEvent(CheckForTvShowStatesEvent event, Emitter<AccountSeeAllState> emit) async {
     final result = await getTvShowWatchListStatesUseCase(
       tvShowId: event.tvShowId,
       sessionId: sessionId,
@@ -192,7 +192,7 @@ class AccountSeeAllBloc extends Bloc<AccountSeeAllEvent, AccountSeeAllState> {
     );
   }
 
-  Future<void> _checkForMovieStatesEvent(event, emit) async {
+  Future<void> _checkForMovieStatesEvent(CheckForMovieStatesEvent event, Emitter<AccountSeeAllState> emit) async {
     await getMovieWatchListStatesUseCase(
       movieId: event.movieId,
       sessionId: sessionId,
@@ -222,7 +222,7 @@ class AccountSeeAllBloc extends Bloc<AccountSeeAllEvent, AccountSeeAllState> {
     );
   }
 
-  Future<void> _checkForMoviesWatchListStatesEvent(event, emit) async {
+  Future<void> _checkForMoviesWatchListStatesEvent(CheckForMoviesWatchListStatesEvent event, Emitter<AccountSeeAllState> emit) async {
     final movieIds = state.moviesWatchList.map((movie) => movie.id).toList();
     final movieUpdatedState = await Future.wait(movieIds
         .map((movieId) => getMovieWatchListStatesUseCase(
@@ -255,7 +255,7 @@ class AccountSeeAllBloc extends Bloc<AccountSeeAllEvent, AccountSeeAllState> {
     }
   }
 
-  Future<void> _checkForTvShowsWatchListStatesEvent(event, emit) async {
+  Future<void> _checkForTvShowsWatchListStatesEvent(CheckForTvShowsWatchListStatesEvent event, Emitter<AccountSeeAllState> emit) async {
     final tvShowsIds =
         state.tvShowsWatchList.map((tvShow) => tvShow.id).toList();
     final tvShowUpdatedState = await Future.wait(tvShowsIds

@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:material_ui/material_ui.dart';
+import 'package:tmda/core/widgets/fade_in_animation.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tmda/core/icons/solar_system_icons.dart';
 import 'package:tmda/core/util/color_manager.dart';
@@ -8,9 +8,9 @@ import 'package:tmda/core/util/color_manager.dart';
     return SnackBar(
     animation: CurvedAnimation(curve: Curves.bounceIn, parent: kAlwaysCompleteAnimation),
     behavior: SnackBarBehavior.floating,
-    content: Animate(
-      effects: [FadeEffect(duration: 250.ms)],
-      child: Row(
+    content: FadeInAnimation(
+        duration: const Duration(milliseconds: 250),
+        child: Row(
         children: [
           const Icon(SolarSystemIcons.error, color: ColorsManager.errorColor, size: 20,),
           SizedBox(width: 3.w),

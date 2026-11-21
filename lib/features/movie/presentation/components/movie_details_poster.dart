@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:tmda/core/constants/api_constants.dart';
 import 'package:tmda/core/constants/app_constants.dart';
@@ -37,7 +37,7 @@ class MovieDetailsPoster extends StatelessWidget {
                  )
                 ),
                 colorFilter: ColorFilter.mode(
-                  Colors.black.withOpacity(0.3),
+                  Colors.black.withValues(alpha: 0.3),
                   BlendMode.darken,
                 ),
                 fit: BoxFit.cover,

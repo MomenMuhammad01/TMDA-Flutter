@@ -1,5 +1,5 @@
 import 'package:cached_network_image/cached_network_image.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_cache_manager/flutter_cache_manager.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,19 +35,19 @@ class CarouselCard extends StatelessWidget {
         children: [
           ColorFiltered(
             colorFilter: ColorFilter.mode(
-              Colors.black.withOpacity(0.3),
+              Colors.black.withValues(alpha: .3),
               BlendMode.darken,
             ),
             child: CachedNetworkImage(
               width: 360.w,
-              imageUrl: imagePath.isNotEmpty ? ApiConstants.imageUrl(imagePath) : errorImagePath,
+              imageUrl: imagePath.isNotEmpty
+                  ? ApiConstants.imageUrl(imagePath)
+                  : errorImagePath,
               fit: BoxFit.cover,
-              cacheManager: CacheManager(
-                  Config(
-                    AppConstants.cacheFolder,
-                    stalePeriod: const Duration(days: AppConstants.cacheDuration),
-                  )
-              ),
+              cacheManager: CacheManager(Config(
+                AppConstants.cacheFolder,
+                stalePeriod: const Duration(days: AppConstants.cacheDuration),
+              )),
             ),
           ),
           Positioned(

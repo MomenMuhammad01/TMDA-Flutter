@@ -116,6 +116,8 @@ class DioApiConsumer extends ApiConsumer {
         break;
       case DioExceptionType.cancel:
         break;
+      case DioExceptionType.transformTimeout:
+        throw const FetchDataException();
       case DioExceptionType.unknown:
         throw const NoInternetConnectionException();
     }

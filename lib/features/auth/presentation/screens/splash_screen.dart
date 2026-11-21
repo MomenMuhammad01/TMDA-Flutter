@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tmda/config/router/app_router.dart';
@@ -9,7 +9,7 @@ import 'package:tmda/features/auth/presentation/screens/selection_screen.dart';
 import 'package:tmda/injection_container.dart';
 
 @RoutePage()
-class SplashScreen extends StatelessWidget with AutoRouteWrapper{
+class SplashScreen extends StatelessWidget implements AutoRouteWrapper {
   const SplashScreen({super.key});
   @override
   Widget wrappedRoute(BuildContext context) {

@@ -1,5 +1,5 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tmda/config/router/app_router.dart';
 import 'package:tmda/config/theme/theme_manager.dart';
@@ -16,12 +16,9 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) => MaterialApp.router(
         debugShowCheckedModeBanner: false,
-        routerDelegate: AutoRouterDelegate(
+        routerConfig: getIt<AppRouter>().config(
           navigatorObservers: () => [MyRouteObserver(), AutoRouteObserver()],
-          getIt<AppRouter>(),
         ),
-        routeInformationParser:
-            getIt<AppRouter>().defaultRouteParser(includePrefixMatches: true),
         theme: ThemeManager.darkTheme(),
       ),
     );

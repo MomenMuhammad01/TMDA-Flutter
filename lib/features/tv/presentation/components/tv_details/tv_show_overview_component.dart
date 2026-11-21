@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tmda/core/icons/solar_system_icons.dart';
@@ -116,7 +116,7 @@ class TvShowOverview extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
-                          color: Colors.white.withOpacity(0.8),
+                          color: Colors.white.withValues(alpha: 0.8),
                         ),
                       ),
                       Text(
@@ -124,7 +124,7 @@ class TvShowOverview extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
-                          color: Colors.white.withOpacity(0.8),
+                          color: Colors.white.withValues(alpha: 0.8),
                         ),
                       ),
                     ],
@@ -137,7 +137,7 @@ class TvShowOverview extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
-                          color: Colors.white.withOpacity(0.8),
+                          color: Colors.white.withValues(alpha: 0.8),
                         ),
                       ),
                       Text(
@@ -145,7 +145,7 @@ class TvShowOverview extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
-                          color: Colors.white.withOpacity(0.8),
+                          color: Colors.white.withValues(alpha: 0.8),
                         ),
                       ),
                       Text(
@@ -155,7 +155,7 @@ class TvShowOverview extends StatelessWidget {
                         style: TextStyle(
                           fontSize: 12.sp,
                           fontWeight: FontWeight.w400,
-                          color: Colors.white.withOpacity(0.8),
+                          color: Colors.white.withValues(alpha: 0.8),
                         ),
                       ),
                     ],
@@ -173,7 +173,7 @@ class TvShowOverview extends StatelessWidget {
                       Text(
                         StringsManager.airedTitle,
                         style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                              color: Colors.white.withOpacity(0.8),
+                              color: Colors.white.withValues(alpha: 0.8),
                             ),
                       ),
                       Text(
@@ -189,7 +189,7 @@ class TvShowOverview extends StatelessWidget {
                       Text(
                         StringsManager.productionCountry,
                         style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                              color: Colors.white.withOpacity(0.8),
+                              color: Colors.white.withValues(alpha: 0.8),
                             ),
                       ),
                       Text(
@@ -203,7 +203,7 @@ class TvShowOverview extends StatelessWidget {
                       Text(
                         StringsManager.from,
                         style: Theme.of(context).textTheme.titleSmall!.copyWith(
-                              color: Colors.white.withOpacity(0.8),
+                              color: Colors.white.withValues(alpha: 0.8),
                             ),
                       ),
                       Text(

@@ -18,10 +18,10 @@ class TvShowsBloc extends Bloc<TvShowsEvent, TvShowsState> {
   final GetTvShowsAiringThisWeekUseCase _getTvShowsAiringThisWeekUseCase;
   final GetPopularTvShowsUseCase _getPopularTvShowsUseCase;
   final GetTopRatedTvShowsUseCase _getTopRatedTvShowsUseCase;
-  int _airingThisWeekPage = 2;
-  int _airingTodayPage = 1;
-  int _popularTvShowsPage = 2;
-  int _topRatedTvShowPage = 1;
+  final int _airingThisWeekPage = 2;
+  final int _airingTodayPage = 1;
+  final int _popularTvShowsPage = 2;
+  final int _topRatedTvShowPage = 1;
 
   TvShowsBloc(
     this._getTvShowsAiringTodayUseCase,
@@ -35,7 +35,7 @@ class TvShowsBloc extends Bloc<TvShowsEvent, TvShowsState> {
     on<GetTopRatedTvShowsEvent>(_topRatedTvShowsEvent);
   }
 
-  Future<void> _airingTodayTvShowsEvent(event, emit) async {
+  Future<void> _airingTodayTvShowsEvent(GetTvShowsAiringTodayEvent event, Emitter<TvShowsState> emit) async {
     final result = await _getTvShowsAiringTodayUseCase(_airingTodayPage);
     result.fold(
       (airingTodayFail) => emit(
@@ -53,7 +53,7 @@ class TvShowsBloc extends Bloc<TvShowsEvent, TvShowsState> {
     );
   }
 
-  Future<void> _getTvShowsAiringThisWeekEvent(event, emit) async {
+  Future<void> _getTvShowsAiringThisWeekEvent(GetTvShowsAiringThisWeekEvent event, Emitter<TvShowsState> emit) async {
     final result = await _getTvShowsAiringThisWeekUseCase(_airingThisWeekPage);
     result.fold(
       (airingThisWeekFail) => emit(
@@ -71,7 +71,7 @@ class TvShowsBloc extends Bloc<TvShowsEvent, TvShowsState> {
     );
   }
 
-  Future<void> _getPopularTvShowsEvent(event, emit) async {
+  Future<void> _getPopularTvShowsEvent(GetPopularTvShowsEvent event, Emitter<TvShowsState> emit) async {
     final result = await _getPopularTvShowsUseCase(_popularTvShowsPage);
     result.fold(
       (popularTvShowsFail) => emit(
@@ -88,7 +88,7 @@ class TvShowsBloc extends Bloc<TvShowsEvent, TvShowsState> {
     );
   }
 
-  Future<void> _topRatedTvShowsEvent(event, emit) async {
+  Future<void> _topRatedTvShowsEvent(GetTopRatedTvShowsEvent event, Emitter<TvShowsState> emit) async {
     final result = await _getTopRatedTvShowsUseCase(_topRatedTvShowPage);
     result.fold(
       (topRatedTvShowsFail) => emit(

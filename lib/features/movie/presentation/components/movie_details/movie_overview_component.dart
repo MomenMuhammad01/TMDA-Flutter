@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter_animate/flutter_animate.dart';
+import 'package:tmda/core/widgets/fade_in_animation.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tmda/core/icons/solar_system_icons.dart';
@@ -65,9 +65,9 @@ class _MovieOverviewComponentState extends State<MovieOverviewComponent> {
       buildWhen: (previous, current) =>
           previous.movieDetailsState != current.movieDetailsState,
       builder: (context, state) {
-        return Animate(
-          effects: [FadeEffect(duration: 150.ms)],
-          child: Column(
+        return FadeInAnimation(
+        duration: const Duration(milliseconds: 150),
+        child: Column(
             children: [
               BlocBuilder<MovieDetailsBloc, MovieDetailsState>(
                 buildWhen: (previous, current) => previous.animatedContainerHeight != current.animatedContainerHeight,
@@ -198,7 +198,7 @@ class _MovieOverviewComponentState extends State<MovieOverviewComponent> {
                     style: TextStyle(
                       fontSize: 12.sp,
                       fontWeight: FontWeight.w400,
-                      color: Colors.white.withOpacity(0.8),
+                      color: Colors.white.withValues(alpha: 0.8),
                     ),
                   ),
                 ),
@@ -214,7 +214,7 @@ class _MovieOverviewComponentState extends State<MovieOverviewComponent> {
                           StringsManager.productionYear,
                           style:
                               Theme.of(context).textTheme.titleSmall!.copyWith(
-                                    color: Colors.white.withOpacity(0.8),
+                                    color: Colors.white.withValues(alpha: 0.8),
                                   ),
                         ),
                         Text(
@@ -231,7 +231,7 @@ class _MovieOverviewComponentState extends State<MovieOverviewComponent> {
                           StringsManager.productionCountry,
                           style:
                               Theme.of(context).textTheme.titleSmall!.copyWith(
-                                    color: Colors.white.withOpacity(0.8),
+                                    color: Colors.white.withValues(alpha: 0.8),
                                   ),
                         ),
                         Text(
@@ -246,7 +246,7 @@ class _MovieOverviewComponentState extends State<MovieOverviewComponent> {
                           StringsManager.length,
                           style:
                               Theme.of(context).textTheme.titleSmall!.copyWith(
-                                    color: Colors.white.withOpacity(0.8),
+                                    color: Colors.white.withValues(alpha: 0.8),
                                   ),
                         ),
                         Text(
